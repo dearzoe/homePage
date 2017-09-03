@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/guanwang.css">
+</head>
+<body>
+    <header>
+        <div>
+            <div>
+                官方扫一扫<i></i><span class="showBig"></span>
+            </div>
+        </div>
+        <div>
+            <nav>
+                <ul>
+                    <li>首页</li>
+                    <li>电商业务</li>
+                    <li>品牌策划</li>
+                </ul>
+                <div id="logosFather">
+                    <ul class="logo" id="logo">
+                        <li><img src="img/icon/1-head-效果后logo.jpg" alt=""></li>
+                        <li><img src="img/icon/1-head-logo.png" alt=""></li>
+                    </ul>
+                </div>
+                <ul>
+                    <li>成功案例</li>
+                    <li>干货咨询</li>
+                    <li>关于大麦</li>
+                </ul>
+            </nav>
+        </div>
+        <div id="outer">
+            <div id="inner">
+                <img src="./img/banner1.jpg" alt="">
+                <img src="./img/banner2.jpg" alt="">
+                <img src="./img/banner3.jpg" alt="">
+                <img src="./img/banner1.jpg" alt="">
+            </div>
+            <ul id="tips">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <a id='rBt' href="javascript:;"></a>
+            <a id='lBt' href="javascript:;"></a>
+        </div>
+    </header>
+    <div>
+        <div class="tuijian">
+            <div class="mini-title">
+                <p>热门推荐</p>
+                <p>Hot Business</p>
+                <span></span>
+            </div>
+            <div id="outer2">
+                <div id="inner2">
+                    <li><img src="./img/banner1.jpg" alt=""></li>
+                    <li><img src="./img/banner2.jpg" alt=""></li>
+                    <li><img src="./img/banner3.jpg" alt=""></li>
+                    <li><img src="./img/banner1.jpg" alt=""></li>
+                    <li><img src="./img/banner2.jpg" alt=""></li>
+                    <li><img src="./img/banner3.jpg" alt=""></li>
+                    <li><img src="./img/banner1.jpg" alt=""></li>
+                    <li><img src="./img/banner2.jpg" alt=""></li>
+                    <li><img src="./img/banner3.jpg" alt=""></li>
+                </div>
+                <a id='rBt2' href="javascript:;"></a>
+                <a id='lBt2' href="javascript:;"></a>
+            </div>
+        </div>
+        <div class="hexin">
+            <div class="mini-title">
+                <p>核心服务</p>
+                <p>Main Business</p>
+                <span></span>
+            </div>
+            <div class="shuju">
+                <h6>数据化运营</h6>
+                <p>介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍</p>
+            </div>
+            <ul>
+                <li>
+                    <span></span>
+                    <h6>品牌发展解决方案</h6>
+                    <span></span>
+                    <ol>
+                        <li>新营销</li>
+                        <li>品牌视觉</li>
+                        <li>内容营销</li>
+                        <li>粉丝营销</li>
+                    </ol>
+                </li>
+                <li>
+                    <span></span>
+                    <h6>线上营销推广</h6>
+                    <span></span>
+                    <ol>
+                        <li>直钻</li>
+                        <li>精准通</li>
+                        <li>智钻</li>
+                        <li>全域营销</li>
+                    </ol>
+                </li>
+                <li>
+                    <span></span>
+                    <h6>大数据服务</h6>
+                    <span></span>
+                    <ol>
+                        <li>店铺分析</li>
+                        <li>竟店分析</li>
+                        <li>行业分析</li>
+                        <li>粉</li>
+                    </ol>
+                </li>
+                <li>
+                    <span></span>
+                    <h6>运营</h6>
+                    <span></span>
+                    <ol>
+                        <li>新营销</li>
+                        <li>品牌视觉</li>
+                        <li>内容营销</li>
+                        <li>粉丝营销</li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/DOM.js"></script>
+<script src="js/Tween.js"></script>
+<script>
+    $(function () {
+        $("#outer").width($(window).width());
+        var inner=document.getElementById("inner"),
+            logo=document.getElementById("logo"),
+            logosFather=document.getElementById("logosFather"),
+            imgLong = $(window).width();
+        $("#inner img").width($(window).width());
+        $("#inner").width($(window).width()*4);
+        /*多张图轮播*/
+        var step=0;
+        setInterval(function () {
+            // DOM.setCss(inner,"left",-1000)
+            if(step==3){
+                step=0;
+                DOM.setCss(inner,"left",0)
+            }
+            step++;
+            Animate(inner,{left:-step*imgLong},1000,4)
+        },3000);
+        /*多张图轮播*/
+        var step2=0;
+        setInterval(function () {
+            // DOM.setCss(inner,"left",-1000)
+            console.log(step2);
+            if(step2==6){
+                step2=0;
+//                DOM.setCss($("#inner2"),"left",0)
+                $("#inner2").css("left",0)
+            }
+            step2++;
+            Animate($("#inner2")[0],{left:-step2*400},1000,4)
+        },3000)
+    })
+</script>
+</html>
